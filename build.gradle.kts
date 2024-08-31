@@ -1,7 +1,9 @@
+import io.izzel.taboolib.gradle.*
+
 plugins {
     `java-library`
-    id("io.izzel.taboolib") version "1.56"
-    id("org.jetbrains.kotlin.jvm") version "1.9.0"
+    id("io.izzel.taboolib") version "2.0.13"
+    id("org.jetbrains.kotlin.jvm") version "1.9.22"
 }
 
 taboolib {
@@ -19,20 +21,13 @@ taboolib {
         }
         load("STARTUP")
     }
-    install("common", "common-5")
-    install(
-        "module-ai",
-        "module-chat",
-        "module-configuration",
-        "module-nms",
-        "module-nms-util",
-        "module-kether",
-        "module-metrics"
-    )
-    install("platform-bukkit")
-    install("expansion-command-helper", "expansion-javascript")
-    classifier = null
-    version = "6.0.12-local"
+    env {
+        install(UNIVERSAL, AI, NMS_UTIL, KETHER, METRICS, BUKKIT_ALL, EXPANSION_JAVASCRIPT)
+    }
+    version {
+        taboolib = "6.1.2-beta10"
+        coroutines = null
+    }
 }
 
 repositories {
@@ -54,7 +49,7 @@ dependencies {
     compileOnly("ink.ptms.core:v12004:12004:universal")
     compileOnly("ink.ptms:nms-all:1.0.0")
 
-    compileOnly("com.electronwill.night-config:core:3.6.5")
+    compileOnly("com.electronwill.night-config:core:3.6.7")
     compileOnly("com.google.code.gson:gson:2.9.0")
     compileOnly("com.google.guava:guava:31.1-jre")
     compileOnly(kotlin("stdlib"))

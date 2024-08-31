@@ -16,16 +16,16 @@ features:
     max_effects: 3
 
 integrations:
-  eco: true
-  ItemsAdder: true
-  Oraxen: true
-  Sandalphon: true
-  Zaphkiel: true
+  eco: false
+  ItemsAdder: false
+  Oraxen: false
+  Sandalphon: false
+  Zaphkiel: false
 
 # 快捷键
 shortcuts:
   # F/Q快捷键冷却
-  cooldown: '0.5s'
+  cooldown: '1s'
   # Shift+F
   sneak_swap: [ ]
   # 低头时F
